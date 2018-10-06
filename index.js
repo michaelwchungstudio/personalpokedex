@@ -1,7 +1,5 @@
-var pokeVaporeon = {};
-var pokeJolteon = {};
-var pokeFlareon = {};
 var hello = [];
+
 
 var image1 = document.getElementById('image1');
 
@@ -15,7 +13,6 @@ var image1 = document.getElementById('image1');
 $.ajax({url:"https://fizal.me/pokeapi/api/134.json",
   success: function(response){
     pokeVaporeon = new Pokemon(response);
-    console.log(pokeVaporeon);
     hello.push(pokeVaporeon);
   }
 })
@@ -28,13 +25,12 @@ $.ajax({url:"https://fizal.me/pokeapi/api/134.json",
 // })
 //
 //
-// $.ajax({url:"https://fizal.me/pokeapi/api/" + 135 + ".json",
-//   success: function(response){
-//     pokeVaporeon = new Pokemon(response);
-//     console.log(pokeVaporeon);
-//     console.log(pokeVaporeon.pokemonSprite)
-//   }
-// })
+$.ajax({url:"https://fizal.me/pokeapi/api/" + 135 + ".json",
+  success: function(response){
+    pokeJolteon = new Pokemon(response);
+    hello.push(pokeJolteon);
+  }
+})
 //
 // // AJAX CALL FOR 136 - FLAREON
 // // $.ajax({url:"https://pokeapi.co/api/v2/pokemon/136/",
@@ -43,13 +39,12 @@ $.ajax({url:"https://fizal.me/pokeapi/api/134.json",
 // //   }
 // // })
 //
-// $.ajax({url:"https://fizal.me/pokeapi/api/136.json",
-//   success: function(response){
-//     pokeFlareon = new Pokemon(response);
-//     console.log(pokeFlareon)
-//
-//   }
-// })
+$.ajax({url:"https://fizal.me/pokeapi/api/136.json",
+  success: function(response){
+    pokeFlareon = new Pokemon(response);
+    hello.push(pokeFlareon);
+  }
+})
 //
 // // TRAINER CLASS
 // // class Trainer {
@@ -63,7 +58,7 @@ $.ajax({url:"https://fizal.me/pokeapi/api/134.json",
 // // }
 //
 // POKEMON CLASS
-console.log(hello);
+console.log(pokeVaporeon);
 
 class Pokemon {
   constructor(pokemonobj) {
@@ -98,3 +93,7 @@ class Pokemon {
 // console.log(a)
 // console.log(pokeVaporeon.pokemonSprite);
 // // image1.backgroundImage = "url("" + pokeVaporeon.pokemonSprite + "")";
+
+var pokeVaporeon = hello[0];
+var pokeJolteon = hello[1];
+var pokeFlareon = hello[2];
