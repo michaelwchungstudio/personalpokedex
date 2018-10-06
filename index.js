@@ -1,5 +1,7 @@
 var hello = [];
-
+var pokeVaporeon = {};
+var pokeJolteon = {};
+var pokeFlareon = {};
 
 var image1 = document.getElementById('image1');
 
@@ -58,8 +60,6 @@ $.ajax({url:"https://fizal.me/pokeapi/api/136.json",
 // // }
 //
 // POKEMON CLASS
-console.log(pokeVaporeon);
-
 class Pokemon {
   constructor(pokemonobj) {
     this.pokemonObject = pokemonobj;
@@ -94,6 +94,8 @@ class Pokemon {
 // console.log(pokeVaporeon.pokemonSprite);
 // // image1.backgroundImage = "url("" + pokeVaporeon.pokemonSprite + "")";
 
-var pokeVaporeon = hello[0];
-var pokeJolteon = hello[1];
-var pokeFlareon = hello[2];
+console.log(pokeVaporeon);
+console.log(pokeJolteon);
+console.log(pokeVaporeon);
+
+console.log(hello);
