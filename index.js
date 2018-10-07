@@ -71,9 +71,9 @@ class Pokemon {
   }
 }
 
-let pokeVaporeon = new Pokemon(134);
-let pokeJolteon = new Pokemon(135);
-let pokeFlareon = new Pokemon(136);
+var pokeVaporeon = new Pokemon(134);
+var pokeJolteon = new Pokemon(135);
+var pokeFlareon = new Pokemon(136);
 
 // ?
 console.log(pokeVaporeon);
