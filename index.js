@@ -1,101 +1,86 @@
-var hello = [];
-var pokeVaporeon = {};
-var pokeJolteon = {};
-var pokeFlareon = {};
-
 var image1 = document.getElementById('image1');
 
-// AJAX CALL FOR 134 - VAPOREON
-// $.ajax({url:"https://pokeapi.co/api/v2/pokemon/134/",
+// $.ajax({url:"https://fizal.me/pokeapi/api/" + 134 + ".json",
 //   success: function(response){
-//     console.log(response)
-//   }
-// })
-
-$.ajax({url:"https://fizal.me/pokeapi/api/134.json",
-  success: function(response){
-    pokeVaporeon = new Pokemon(response);
-    hello.push(pokeVaporeon);
-  }
-})
-
-// AJAX CALL FOR 135 - JOLTEON
-// $.ajax({url:"https://pokeapi.co/api/v2/pokemon/" + 135 + "/",
-//   success: function(response){
-//     console.log(response)
+//     pokeVaporeon = new Pokemon(response);
+//     hello.push(pokeVaporeon);
 //   }
 // })
 //
+// $.ajax({url:"https://fizal.me/pokeapi/api/" + 135 + ".json",
+//   success: function(response){
+//     pokeJolteon = new Pokemon(response);
+//     hello.push(pokeJolteon);
+//   }
+// })
 //
-$.ajax({url:"https://fizal.me/pokeapi/api/" + 135 + ".json",
-  success: function(response){
-    pokeJolteon = new Pokemon(response);
-    hello.push(pokeJolteon);
-  }
-})
-//
-// // AJAX CALL FOR 136 - FLAREON
-// // $.ajax({url:"https://pokeapi.co/api/v2/pokemon/136/",
-// //   success: function(response){
-// //     console.log(response)
-// //   }
-// // })
-//
-$.ajax({url:"https://fizal.me/pokeapi/api/136.json",
-  success: function(response){
-    pokeFlareon = new Pokemon(response);
-    hello.push(pokeFlareon);
-  }
-})
-//
-// // TRAINER CLASS
-// // class Trainer {
-// //   constructor(arrayOfPokeObj) {
-// //     this.trainerPokemon = arrayOfPokeObj;
-// //   }
-// //
-// //   all() {
-// //     return
-// //   }
-// // }
-//
-// POKEMON CLASS
-class Pokemon {
-  constructor(pokemonobj) {
-    this.pokemonObject = pokemonobj;
-    this.pokemonID = pokemonobj.id;
-    this.healthPoints = pokemonobj.stats[5].base_stat;
-    this.attackPoints = pokemonobj.stats[4].base_stat;
-    this.defensePoints = pokemonobj.stats[3].base_stat;
-    this.pokemonSprite = pokemonobj.sprites.front_default;
-    this.pokemonAbilities = [];
+// $.ajax({url:"https://fizal.me/pokeapi/api/136.json",
+//   success: function(response){
+//     pokeFlareon = new Pokemon(response);
+//     hello.push(pokeFlareon);
+//   }
+// })
 
-    for(let i = 0; i < pokemonobj.abilities.length; i++) {
-      this.pokemonAbilities.push(pokemonobj.abilities[i].ability.name)
-    }
+// TRAINER CLASS
+class Trainer {
+  constructor(arrayOfPokemon) {
+    this.trainerPokemon = arrayOfPokemon;
+  }
+
+  addPokemon(pokeObj) {
+    this.trainerPokemon.push(pokeObj);
+  }
+
+  all() {
+    return trainerPokemon;
   }
 }
-//
-// function changeName(x) {
-//   pokeName.innerHTML = x.name;
-// }
-//
-// function whatever(x){
-//     whoever(x)
-// }
-//
-// function whoever(y){
-//   a = new Pokemon(y)
-//   console.log(a.pokemonObject.pokemonID)
-// }
-//
-//
-// console.log(a)
-// console.log(pokeVaporeon.pokemonSprite);
-// // image1.backgroundImage = "url("" + pokeVaporeon.pokemonSprite + "")";
 
-console.log(pokeVaporeon);
-console.log(pokeJolteon);
-console.log(pokeVaporeon);
+// POKEMON CLASS
+class Pokemon {
+  constructor(idnum) {
+    this.pokemonObject;
+    this.pokemonID = idnum;
+    this.healthPoints;
+    this.attackPoints;
+    this.defensePoints;
+    this.pokemonSprite;
+    this.pokemonAbilities;
 
-console.log(hello);
+    this.createPokemon(idnum);
+  }
+
+  createPokemon(idnum) {
+    var that = this;
+
+    $.ajax({url:"https://fizal.me/pokeapi/api/" + idnum + ".json",
+      type: "GET",
+      success: function(response){
+        that.pokemonObject = response;
+        that.healthPoints = response.stats[5].base_stat;
+        that.attackPoints = response.stats[4].base_stat;
+        that.defensePoints = response.stats[3].base_stat;
+        that.pokemonSprite = response.sprites.front_default;
+        that.pokemonAbilities = [];
+
+        for(let i = 0; i < response.abilities.length; i++) {
+          that.pokemonAbilities.push(response.abilities[i].ability.name)
+        }
+      }
+    })
+  }
+}
+
+let pokeVaporeon = new Pokemon(134);
+let pokeJolteon = new Pokemon(135);
+let pokeFlareon = new Pokemon(136);
+
+// ?
+console.log(pokeVaporeon);
+console.log(pokeVaporeon.pokemonAbilities);
+
+var trainerMike = new Trainer([]);
+trainerMike.addPokemon(pokeVaporeon);
+trainerMike.addPokemon(pokeJolteon);
+trainerMike.addPokemon(pokeFlareon);
+console.log(trainerMike);
