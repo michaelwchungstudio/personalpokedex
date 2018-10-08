@@ -35,7 +35,7 @@ function createPokemon(idnum) {
 }
 
 window.addEventListener('load', function() {
-  (createPokemon(Math.floor(Math.random() * 721)));
+  (createPokemon(Math.floor(Math.random() * 807)));
 });
 
 subbutton.addEventListener('click', function() {
