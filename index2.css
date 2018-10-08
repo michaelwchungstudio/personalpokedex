@@ -135,12 +135,44 @@ body {
   color: white
 }
 
-#submittxt {
+.buttontext {
   font-size: 20px;
   font-weight: 400;
   cursor: pointer;
 }
 
+.pokebutton {
+  height: 40px;
+  width: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  color: black;
+}
+
+.pokebutton:hover {
+  background-color: black;
+  color: white
+}
+
 .column {
   margin-top: 10vh;
+}
+
+#column2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#trainerbar {
+  height: 1px;
+  width: 20vw;
+  background-color: black;
+  margin: 4px 0 15px 0;
+}
+
+#trainername {
+  margin-top: 18vh;
 }
