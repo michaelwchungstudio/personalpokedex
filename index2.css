@@ -87,12 +87,8 @@ body {
 
 .row {
   display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-#row1 {
   flex-direction: row;
+  justify-content: center;
 }
 
 #row2 {
@@ -103,16 +99,48 @@ body {
 #pokesprite {
   height: 200px;
   width: 200px;
-  border: 1px solid green;
   background-size: contain;
 }
 
+.pokeinfo1 {
+  text-align: right;
+}
+
 .pokeinfo {
-  font-size: 16px;
+  font-size: 20px;
+  padding: 3px 0;
 }
 
 #idinput {
   height: 40px;
-  width: 100px;
+  width: 110px;
+  font-size: 22px;
+  margin-top: 8.5vh;
+}
+
+#subbutton {
+  margin-left: 10px;
+  height: 40px;
+  width: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  color: black;
+  margin-top: 8.5vh;
+}
+
+#subbutton:hover {
+  background-color: black;
+  color: white
+}
+
+#submittxt {
   font-size: 20px;
+  font-weight: 400;
+  cursor: pointer;
+}
+
+.column {
+  margin-top: 10vh;
 }
