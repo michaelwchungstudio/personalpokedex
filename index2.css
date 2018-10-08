@@ -1,9 +1,88 @@
-.wrapper {
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Futura";
+}
+
+@font-face {
+  font-family: "Futura";
+  src: url("fonts/FuturaStd-Book.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Futura";
+  src: url("fonts/FuturaStd-Light.otf") format("opentype");
+  font-weight: 100;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Futura";
+  src: url("fonts/FuturaStd-Bold.otf") format("opentype");
+  font-weight: 600;
+  font-style: normal;
+}
+
+.bgwrapper {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: -1;
+  background: linear-gradient(to bottom, #EE1515 50%, #F0F0F0 50%);
+  position: absolute;
+}
+
+.bgline {
+  height: 4.5vh;
+  width: 100vw;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.circle {
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#circle1 {
+  height: 27.8vw;
+  width: 27.8vw;
+  background-color: black;
+}
+
+#circle2 {
+  height: 23vw;
+  width: 23vw;
+  background-color: white;
+}
+
+#currentpokesprite {
+  height: 16vw;
+  width: 16vw;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.infowrapper {
   height: 100vh;
   width: 100vw;
   display: grid;
-  grid-template-rows: 0.3fr 0.3fr 1fr;
+  grid-template-rows: 0.5fr 0.5fr;
   border: 1px solid;
+  z-index: 1;
+  position: relative;
 }
 
 .row {
@@ -16,8 +95,9 @@
   flex-direction: row;
 }
 
-#row3 {
-  flex-direction: column;
+#row2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
 }
 
 #pokesprite {
@@ -28,6 +108,11 @@
 }
 
 .pokeinfo {
-  font-family: Helvetica;
   font-size: 16px;
+}
+
+#idinput {
+  height: 40px;
+  width: 100px;
+  font-size: 20px;
 }

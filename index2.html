@@ -7,23 +7,30 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   </head>
   <body>
-    <div class='wrapper'>
-      <div class='row' id='row1'>
-        <input type='number' name='pokeidnumber' min='1' max='807' id='idinput'></input>
-        <input type='submit' name='submitbutton' id='subbutton'></input>
+      <div class='bgwrapper'>
+        <div class='bgline'>
+          <div class='circle' id='circle1'>
+            <div class='circle' id='circle2'>
+              <div id='currentpokesprite'></div>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class='row' id='row2'>
-        <div id='pokesprite'></div>
+
+      <div class='infowrapper'>
+        <div class='row' id='row1'>
+          <input type='number' name='pokeidnumber' min='1' max='807' id='idinput'></input>
+          <input type='submit' name='submitbutton' id='subbutton'></input>
+        </div>
+        <div class='row' id='row2'>
+          <p class='pokeinfo' id='pokeid'></p>
+          <p class='pokeinfo' id='pokename'></p>
+          <p class='pokeinfo' id='pokehp'></p>
+          <p class='pokeinfo' id='pokeattack'></p>
+          <p class='pokeinfo' id='pokedef'></p>
+          <p class='pokeinfo' id='pokeabilities'></p>
+        </div>
       </div>
-      <div class='row' id='row3'>
-        <p class='pokeinfo' id='pokeid'></p>
-        <p class='pokeinfo' id='pokename'></p>
-        <p class='pokeinfo' id='pokehp'></p>
-        <p class='pokeinfo' id='pokeattack'></p>
-        <p class='pokeinfo' id='pokedef'></p>
-        <p class='pokeinfo' id='pokeabilities'></p>
-      </div>
-    </div>
     <script type="text/javascript" src="index2.js"></script>
   </body>
 </html>

@@ -1,5 +1,5 @@
 var submitButton = document.getElementById('subbutton');
-var pokemonSprite = document.getElementById('pokesprite');
+var pokemonSprite = document.getElementById('currentpokesprite');
 var pokeID = document.getElementById('pokeid');
 var pokeName = document.getElementById('pokename');
 var pokeHP = document.getElementById('pokehp');
@@ -25,7 +25,6 @@ function createPokemon(idnum) {
         }
         else {
           abil += (response.abilities[i].ability.name.charAt(0).toUpperCase() + response.abilities[i].ability.name.slice(1) + ", ");
-
         }
       }
 
