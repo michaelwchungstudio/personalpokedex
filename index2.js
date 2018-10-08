@@ -1,5 +1,6 @@
 var submitButton = document.getElementById('subbutton');
 var pokemonSprite = document.getElementById('pokesprite');
+var pokeID = document.getElementById('pokeid');
 var pokeName = document.getElementById('pokename');
 var pokeHP = document.getElementById('pokehp');
 var pokeAttack = document.getElementById('pokeattack');
@@ -10,6 +11,7 @@ function createPokemon(idnum) {
   $.ajax({url:"https://fizal.me/pokeapi/api/" + idnum + ".json",
     success: function(response){
       pokemonSprite.style.backgroundImage = "url(" + response.sprites.front_default; + ")";
+      pokeID.innerText = "ID: " + response.id;
       pokeName.innerText = "Name: " + response.name.charAt(0).toUpperCase() + response.name.slice(1);
       pokeHP.innerText = "HP: " + response.stats[5].base_stat;
       pokeAttack.innerText = "Attack: " + response.stats[4].base_stat;
