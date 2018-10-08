@@ -10,6 +10,7 @@ var pokeAbilities = document.getElementById('pokeabilities');
 function createPokemon(idnum) {
   $.ajax({url:"https://fizal.me/pokeapi/api/" + idnum + ".json",
     success: function(response){
+      console.log(response.id);
       pokemonSprite.style.backgroundImage = "url(" + response.sprites.front_default; + ")";
       pokeID.innerText = "ID: " + response.id;
       pokeName.innerText = "Name: " + response.name.charAt(0).toUpperCase() + response.name.slice(1);
@@ -38,7 +39,7 @@ window.addEventListener('load', function() {
   (createPokemon(Math.floor(Math.random() * 807)));
 });
 
-subbutton.addEventListener('click', function() {
+submitButton.addEventListener('click', function() {
   var pokeIDNum = document.getElementById('idinput').value;
 
   createPokemon(pokeIDNum);
