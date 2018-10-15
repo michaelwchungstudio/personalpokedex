@@ -2,53 +2,63 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Personal Pokedex</title>
-    <link rel="stylesheet" type="text/css" href="index.css">
+    <title>Pokedex Test</title>
+    <link rel="stylesheet" type="text/css" href="indexv2.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   </head>
   <body>
-    <div class='bgwrapper'>
-      <div class='bgline'>
-        <div class='circle' id='circle1'>
-          <div class='circle' id='circle2'>
-            <div id='currentpokesprite'></div>
+      <div class='bgwrapper'>
+        <div class='bgline'>
+          <div class='circle' id='circle1'>
+            <div class='circle' id='circle2'>
+              <div id='currentpokesprite'></div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
 
-    <div class='infowrapper'>
-      <div class='row' id='row1'></div>
-      <div class='row' id='row2'>
-        <div class='column'>
-          <div class='pokeinfo1'>
-            <p class='pokeinfo' id='pokeid'></p>
-            <p class='pokeinfo' id='pokename'></p>
+      <div class='infowrapper'>
+        <div class='row' id='row1'>
+          <div id='r1c1'>
+            <h2 id='trainername'>Trainer Mike's Pokemon</h2>
+            <div id='trainerbar'></div>
+            <div class='pokebutton' id='vapbutton'>
+              <h3 class='buttontext'>VAPOREON</h3>
+            </div>
+            <div class='pokebutton' id='joltbutton'>
+              <h3 class='buttontext'>JOLTEON</h3>
+            </div>
+            <div class='pokebutton' id='flarebutton'>
+              <h3 class='buttontext'>FLAREON</h3>
+            </div>
           </div>
+          <div id='r1c2'>
+            <input type='number' name='pokeidnumber' min='1' max='807' id='idinput'></input>
+            <div id='subbutton'>
+              <h3 class='buttontext'>SUBMIT</h3>
+            </div>
+          </div>
+          <div></div>
         </div>
-        <div class='column' id='column2'>
-          <h2 id='trainername'>Trainer Mike's Pokemon</h2>
-          <div id='trainerbar'></div>
-          <div class='pokebutton' id='vapbutton'>
-            <h3 class='buttontext'>VAPOREON</h3>
+        <div class='row' id='row2'>
+          <div class='column'>
+            <div class='pokeinfo1'>
+              <p class='pokeinfo' id='pokeid'></p>
+              <p class='pokeinfo' id='pokename'></p>
+            </div>
           </div>
-          <div class='pokebutton' id='joltbutton'>
-            <h3 class='buttontext'>JOLTEON</h3>
+          <div class='column' id='column2'>
           </div>
-          <div class='pokebutton' id='flarebutton'>
-            <h3 class='buttontext'>FLAREON</h3>
-          </div>
-        </div>
-        <div class='column'>
-          <div class='pokeinfo2'>
-            <p class='pokeinfo' id='pokehp'></p>
-            <p class='pokeinfo' id='pokeattack'></p>
-            <p class='pokeinfo' id='pokedef'></p>
-            <p class='pokeinfo' id='pokeabilities'></p>
+          <div class='column'>
+            <div class='pokeinfo2'>
+              <p class='pokeinfo' id='pokehp'></p>
+              <p class='pokeinfo' id='pokeattack'></p>
+              <p class='pokeinfo' id='pokedef'></p>
+              <p class='pokeinfo' id='pokeabilities'></p>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-    <script type="text/javascript" src="index.js"></script>
+    <script type="text/javascript" src="indexv2.js"></script>
   </body>
 </html>

@@ -1,0 +1,193 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Futura";
+}
+
+@font-face {
+  font-family: "Futura";
+  src: url("fonts/FuturaStd-Book.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Futura";
+  src: url("fonts/FuturaStd-Light.otf") format("opentype");
+  font-weight: 100;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Futura";
+  src: url("fonts/FuturaStd-Bold.otf") format("opentype");
+  font-weight: 600;
+  font-style: normal;
+}
+
+.bgwrapper {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: -1;
+  background: linear-gradient(to bottom, #EE1515 50%, #F0F0F0 50%);
+  position: absolute;
+}
+
+.bgline {
+  height: 4.5vh;
+  width: 100vw;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.circle {
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#circle1 {
+  height: 27.8vw;
+  width: 27.8vw;
+  background-color: black;
+}
+
+#circle2 {
+  height: 23vw;
+  width: 23vw;
+  background-color: white;
+}
+
+#currentpokesprite {
+  height: 16vw;
+  width: 16vw;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.infowrapper {
+  height: 100vh;
+  width: 100vw;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  border: 1px solid;
+  z-index: 1;
+  position: relative;
+}
+
+/* .row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+} */
+
+#row1 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+#r1c1 {
+  padding-left: 3.5vw;
+}
+
+#r1c2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#row2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+#pokesprite {
+  height: 200px;
+  width: 200px;
+  background-size: contain;
+}
+
+.pokeinfo1 {
+  text-align: right;
+}
+
+.pokeinfo {
+  font-size: 20px;
+  padding: 3px 0;
+}
+
+#idinput {
+  height: 40px;
+  width: 110px;
+  font-size: 22px;
+  margin-top: 5vh;
+}
+
+#subbutton {
+  height: 40px;
+  width: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  color: black;
+  margin-top: 3vh;
+}
+
+#subbutton:hover {
+  background-color: black;
+  color: white
+}
+
+.buttontext {
+  font-size: 18px;
+  font-weight: 400;
+  cursor: pointer;
+}
+
+.pokebutton {
+  height: 40px;
+  width: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #F0F0F0;
+  color: black;
+}
+
+.pokebutton:hover {
+  background-color: black;
+  color: white;
+}
+
+.column {
+  margin-top: 10vh;
+}
+
+#column2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#trainerbar {
+  height: 1px;
+  width: 275px;
+  background-color: black;
+  margin: 4px 0 15px 0;
+}
+
+#trainername {
+  font-weight: 500;
+  margin-top: 5vh;
+}
